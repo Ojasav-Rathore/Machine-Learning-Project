@@ -1,5 +1,5 @@
 # data-science-project
-The project uses the Medical Personal Cost Dataset.
+The project uses the Medical Personal Cost Dataset to predict insurance costs.
 It includes Checking the data for Null values.
 EDA through scatter plots, pair plots, Box Plots.
 Box plots to check outliers.
