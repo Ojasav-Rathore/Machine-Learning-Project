@@ -4,10 +4,11 @@ from flask import Flask, request
 import json
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
-scaler = MinMaxScaler()
+
 app = Flask(__name__)
 
 model = joblib.load(r'C:\Users\Dell\Documents\GitHub\data-science-project\Linear_model')
+scaler = joblib.load(r"C:\Users\Dell\Documents\GitHub\data-science-project\Scaling_parameters")
 
 @app.route('/predict_cost',methods=['POST'])
 
@@ -17,7 +18,7 @@ def predict_cost():
     values = list(map(np.float, values))
     pre = np.array(values)
     pre = pre.reshape(1,-1)
-    #pre = scaler.transform(pre)
+    pre = scaler.transform(pre)
     res = model.predict(pre)
     print(res)
     return str(res[0])
