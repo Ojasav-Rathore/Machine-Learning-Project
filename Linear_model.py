@@ -7,7 +7,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 app = Flask(__name__)
 
-model = joblib.load(r'C:\Users\Dell\Documents\GitHub\data-science-project\Linear_model')
+model = joblib.load(r'C:\Users\Dell\Documents\GitHub\data-science-project\SVR_model')
 scaler = joblib.load(r"C:\Users\Dell\Documents\GitHub\data-science-project\Scaling_parameters")
 
 @app.route('/predict_cost',methods=['POST'])
